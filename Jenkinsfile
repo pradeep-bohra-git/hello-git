@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh 'chmod +x build.sh'
                 sh './build.sh'
+                sh 'ls -ltr target'
             }
         }
     stage('Upload to JFrog') {
@@ -13,8 +14,8 @@ pipeline {
                 sh '''
                 jf rt upload \
                   --server-id=my-jfrog \
-                  "/var/lib/jenkins/workspace/test_pipeline/*" \
-                  "generic-local/builds/"
+                  "target/*" \
+                  "generic-local/builds/${BUILD_NUMBER}/"
                 '''
             }
         }
