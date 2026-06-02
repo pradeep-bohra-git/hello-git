@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh '''
                 jf rt upload \
+                  --server-id=my-jfrog \
                   "target/*" \
                   "generic-local/builds/"
                 '''
