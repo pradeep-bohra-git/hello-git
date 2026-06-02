@@ -13,7 +13,7 @@ pipeline {
                 sh '''
                 jf rt upload \
                   --server-id=my-jfrog \
-                  "test_pipeline/*" \
+                  "/var/lib/jenkins/workspace/test_pipeline/*" \
                   "generic-local/builds/"
                 '''
             }
