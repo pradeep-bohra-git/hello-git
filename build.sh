@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Compiling..."
+echo "Compiling Java file..."
 javac Hello.java
 
 mkdir -p target
