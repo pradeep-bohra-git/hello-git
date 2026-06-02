@@ -8,5 +8,14 @@ pipeline {
                 sh './build.sh'
             }
         }
+    stage('Upload to JFrog') {
+            steps {
+                sh '''
+                jf rt upload \
+                  "target/*" \
+                  "generic-local/builds/"
+                '''
+            }
+        }
     }
 }
